@@ -1,0 +1,21 @@
+{
+  "name": "trpc-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --loader ts-node/esm index.ts"
+  },
+  "dependencies": {
+    "@trpc/server": "^11.8.0",
+    "express": "^4.22.1",
+    "cors": "^2.8.5",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^25.0.2",
+    "@types/express": "^5.0.6",
+    "@types/cors": "^2.8.19"
+  }
+}
