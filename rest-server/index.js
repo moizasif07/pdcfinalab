@@ -21,9 +21,24 @@ app.get("/", (req, res) => {
 });
 
 app.post("/uploadImage", upload.single("image"), (req, res) => {
+  const startTime = Date.now();   // ⏱ start time
+
+  // Payload size (image size in bytes)
+  const payloadSize = req.file.size;
+
+  // Dummy model inference
   const result = dummyModel();
-  res.json(result);
+
+  const endTime = Date.now();     // ⏱ end time
+
+  res.json({
+    result,
+    responseTime: endTime - startTime,
+    payloadSize: payloadSize,
+    networkCalls: 1
+  });
 });
+
 
 app.listen(3000, () => {
   console.log("REST server running on port 3000");
